@@ -12,12 +12,12 @@ How it works (high level)
 
 Prerequisites
 - Docker Desktop (Windows) running
-- PowerShell (you're already in the project root)
+- PowerShell 
 
 Files added
 - `docker-compose.yaml` — simple compose that runs `apache/airflow:2.7.1` in standalone mode and mounts `./dags`.
 
-Quick start (PowerShell, run from project root `C:\Users\User\Desktop\ETL Project`)
+Quick start (PowerShell, run from project root)
 
 1. Start the container (foreground, useful to watch logs):
 
@@ -59,7 +59,7 @@ Notes & tips
 - The compose file sets `_PIP_ADDITIONAL_REQUIREMENTS=pandas`, so pandas will be installed inside the container automatically at startup.
 - The `dags/` volume is mounted read-only from the host; if you want to edit DAG files from the container, remove `:ro` in `docker-compose.yaml`.
 - Network access is required to fetch the Google Sheets CSV from your DAG.
-- If you prefer a more production-like setup (Postgres + Redis + scheduler + workers), I can add the full official docker-compose example; this simple setup is intended for local development and testing.
+- If you prefer a more production-like setup (Postgres + Redis + scheduler + workers)
 
 Troubleshooting
 - If the webserver port 8080 is already used, change the port mapping in `docker-compose.yaml`.
