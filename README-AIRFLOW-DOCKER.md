@@ -64,8 +64,3 @@ Notes & tips
 Troubleshooting
 - If the webserver port 8080 is already used, change the port mapping in `docker-compose.yaml`.
 - If your DAG doesn't appear, check `docker compose logs` and ensure the `dags` path in your host contains the DAG file (`dags/etl_sales_dag.py`).
-
-Next steps I can take for you
-- Create a `docker-compose.override.yaml` that uses absolute host paths for your environment.
-- Replace the single-container approach with the full official Airflow Compose (Postgres + Redis) if you'd like to scale or test multi-worker behavior.
-- Run the `docker compose up` here and inspect logs (requires permission to run Docker commands from this environment).
