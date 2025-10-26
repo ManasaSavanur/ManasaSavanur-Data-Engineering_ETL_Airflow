@@ -1,0 +1,21 @@
+services:
+  airflow:
+    image: apache/airflow:2.7.1
+    environment:
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/airflow.db
+      SALES_DB_CONN: sqlite:////opt/airflow/data/sales.db
+      _PIP_ADDITIONAL_REQUIREMENTS: "pandas sqlalchemy"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./data:/opt/airflow/data
+    ports:
+      - "8080:8080"
+    command: >
+      bash -c "airflow db init &&
+               airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password admin || true &&
+               airflow standalone"
+    restart: unless-stopped
