@@ -1,12 +1,13 @@
-ETL Project — Airflow + Docker (Local Development) 🚀🐍🐳
+ETL Project — Airflow + Docker 🚀🐍🐳
 Project Overview 📦
 
 This repository provides a minimal Airflow-based ETL pipeline that:
 
-📥 Downloads a sales CSV from Google Sheets
+📥 Downloads sales data from Google Sheets
 
-🗓 Normalizes the ORDERDATE column
+🗓 Performs basic data transformation
 
 💾 Writes the transformed data to a local SQLite database (or a managed database if configured)
 
-Purpose: Provide a reproducible local development environment using Docker Compose for authoring and testing Airflow DAGs that process sales data and expose it for BI tools.
+<img width="1200" height="277" alt="1_dPYagbr2YdNjp4npDwycDw" src="https://github.com/user-attachments/assets/e1fb560a-2b7a-4bb8-90e2-1dca0f9f873d" />
+
